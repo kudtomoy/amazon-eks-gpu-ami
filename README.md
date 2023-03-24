@@ -21,3 +21,10 @@
 ```
 $ packer build amazon-eks-gpu-ami.json
 ```
+
+3. Specify the cluster name in userdata and bootstrap at node startup.
+```
+#!/usr/bin/env bash
+
+/etc/eks/bootstrap.sh {ClusterName} --container-runtime containerd
+```
